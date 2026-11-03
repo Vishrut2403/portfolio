@@ -1,0 +1,30 @@
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a href="{{ site.Home.RelPermalink }}" class="brand" aria-label="{{ site.Params.name }}, home">
+      <img class="brand__avatar" src="{{ site.Params.avatar | relURL }}" alt="" width="40" height="40">
+      <span class="brand__name">{{ site.Params.name }}</span>
+    </a>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        {{ range hugo.Data.nav }}
+        {{ $frag := cond (strings.Contains .href "#") (index (split .href "#") 1) "" }}
+        <li><a href="{{ strings.TrimPrefix "/" .href | relURL }}"{{ with $frag }} data-scrollspy="{{ . }}"{{ end }}>{{ .label }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <div class="topbar__actions">
+      <a class="btn btn--small btn--pink" href="{{ site.Params.resume | relURL }}" target="_blank" rel="noopener">Resume</a>
+      <button id="theme-toggle" class="btn btn--small btn--icon" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span class="theme-icon--sun">{{ partial "icon.html" "sun" }}</span>
+        <span class="theme-icon--moon">{{ partial "icon.html" "moon" }}</span>
+      </button>
+      <button id="nav-toggle" class="btn btn--small nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__open">{{ partial "icon.html" "menu" }}</span>
+        <span class="nav-toggle__close">{{ partial "icon.html" "close" }}</span>
+        Menu
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,46 @@
+# Order + copy are curated here; stars and language are pulled live from data/github/repos.json.
+- repo: "Ray-Tracing-Engine"
+  title: "Ray Tracing Engine"
+  featured: true   # full-width card with highlight numbers
+  description: "Physically-based renderer in C++ with OpenMP CPU and CUDA backends sharing one shading model: path tracing, BDPT with full MIS, progressive photon mapping and ReSTIR DI+GI. GGX microfacet BSDF with VNDF sampling and Kulla–Conty energy compensation, HDR environment sampling, and an Owen-scrambled sampler for bit-reproducible renders."
+  highlights:
+    - { value: "4", label: "integrators" }
+    - { value: "707", label: "test checks" }
+    - { value: "6.4×", label: "faster on GPU" }
+  tags: ["C++", "CUDA", "OpenMP", "Path Tracing", "ReSTIR"]
+- repo: "RenderNet"
+  title: "RenderNet"
+  description: "Self-hosted Blender render farm. Lease-based scheduling on SQLite transactions prevents double renders and reclaims a dead worker's frames within 30 s; start-time fair queueing and adaptive batching sized by each machine's median frame time."
+  tags: ["Node.js", "Express", "SQLite", "Blender CLI"]
+- repo: "blendiff"
+  title: "BlenDiff"
+  description: "Semantic diff and three-way merge for .blend files across 16 scene domains. On Blender Extensions with 300+ downloads and 600+ tests; a content-addressed store cut snapshot history 15× (24.6 → 1.6 MB) and parse time 17× (280 → 17 ms)."
+  tags: ["Python", "Blender API", "Diff / Merge"]
+- repo: "tessera"
+  title: "tessera"
+  description: "Heap-free, capability-based RISC-V microkernel in Rust. Drivers and the filesystem run unprivileged and a supervisor restarts crashed ones; bisected a 38% IPC regression (1136 → 722 instructions per round trip). 276 tests across 19 bootable images."
+  tags: ["Rust", "RISC-V", "Microkernel", "OS"]
+- repo: "GameVault"
+  title: "GameVault"
+  description: "Steam library analytics with HowLongToBeat estimates, activity heatmaps and price-per-hour, plus 0/1-knapsack budget recommendations and a backlog planner that projects finish dates from your last 30 days of play."
+  tags: ["TypeScript", "React", "Prisma", "PostgreSQL"]
+- repo: "blender-agent"   # repo not renamed on GitHub; card uses the project's name
+  title: "Scenewright"
+  description: "LLM-driven Blender automation: planner–executor–critic agents turn natural language into Blender Python operations, with a ReAct loop that feeds failures back so it recovers unattended. Runs on a local Qwen model or Gemini."
+  tags: ["Python", "FastAPI", "WebSockets", "Ollama", "Gemini"]
+- repo: "AmazonML26"
+  title: "Amazon ML Challenge 2026"
+  description: "Top 5% of 10,000+ teams (0.987 macro F0.5). Matched 10M noisy multilingual records to 1.73M businesses: 98.5% pair recall from rare-token blocking and embedding search, then LightGBM + multilingual-e5 cross-encoders over 63.2M candidate pairs."
+  tags: ["Python", "NLP", "LightGBM", "Transformers"]
+- repo: "aptos-dr-grading"
+  title: "DR Grading Study"
+  description: "Controlled comparison of MLP, CNN, EfficientNet-B0 and ViT-S/16 for diabetic retinopathy grading on APTOS 2019. Refitting collapsed CORAL thresholds lifted EfficientNet-B0 from 0.760 to 0.896 QWK; bootstrap CIs show the deep models are statistically tied."
+  tags: ["PyTorch", "ViT", "Medical Imaging"]
+- repo: "gba-rs"
+  title: "gba-rs"
+  description: "Game Boy Advance emulator in Rust, with an ARM7TDMI core (CPU, barrel shifter, bus) under unit tests."
+  tags: ["Rust", "Emulation", "ARM7"]
+- repo: "DeskLLM"
+  title: "DeskLLM"
+  description: "Local-first Electron desktop app for chatting with Ollama models, with an experimental Stable Diffusion pipeline. Runs fully offline."
+  tags: ["Electron", "Node.js", "Python", "Ollama"]

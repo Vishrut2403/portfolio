@@ -1,0 +1,17 @@
+baseURL = "https://vishrut2403.github.io/portfolio/"   # GitHub Pages project site (repo "portfolio")
+locale = "en-US"
+title = "Vishrut Sachan"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  name = "Vishrut Sachan"
+  handle = "Vishrut2403"
+  tagline = "Graphics & systems engineer. 3D artist. Emulator tinkerer."
+  github = "https://github.com/Vishrut2403"
+  avatar = "avatar.webp"
+  resume = "assets/docs/VishrutSachan_Resume.pdf"
+  description = "Portfolio of Vishrut Sachan: C++/CUDA graphics, emulator and open source work (RPCS3, PrismLauncher, PCSX2, Blender), plus a gallery of Blender renders."
+
+[markup.goldmark.renderer]
+  unsafe = true

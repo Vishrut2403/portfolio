@@ -1,0 +1,25 @@
+# Source: static/assets/docs/VishrutSachan_Resume.pdf
+- title: "Software Developer Intern"
+  org: "Engineers India Limited (EIL) · New Delhi"
+  date: "May 2026 – Jul 2026"
+  details:
+    - "Built a RAG assistant for the internal employee dashboard over CGHS reimbursement rules and leave policy: hybrid trigram + vector retrieval fused with Reciprocal Rank Fusion, served through an SSE-streamed Gemini chat."
+    - "Developed a role-based manager module for grievance and medical-claim approval workflows (C#, ASP.NET Core, EF Core, PostgreSQL)."
+    - "Moved credentials into user-secrets and added defence-in-depth validation at the API and database layers."
+    - "Cut page load times across salary, allowance and attendance modules by compiling Tailwind at build time and parallelising each view's queries."
+
+- title: "Blender Head"
+  org: "VARISE, MIT Manipal"
+  orgHref: "https://github.com/Project-V-ARISE"
+  date: "Mar 2024 – Present"
+  details:
+    - "Led the end-to-end 3D and VR pipeline for two production projects, an ASD treatment tool and a VR simulator."
+    - "Team placed Top 8 of ~2,000 at the XR Creator Hackathon (Nov 2024 – Mar 2025)."
+    - "Built a Blender curriculum, mentoring 100 participants as technical lead across modelling, shading and rendering."
+
+- title: "Open Source Contributor"
+  org: "Blender · RPCS3 · PrismLauncher · PCSX2 · fish-shell"
+  date: "Apr 2026 – Present"
+  details:
+    - "Merged fixes and features across Blender, emulators (RPCS3, PCSX2) and the PrismLauncher Minecraft launcher; see Open Source below."
+    - "RPCS3: ISO metadata cache, multi-game collection discs, PR auto-labeling CI. PrismLauncher: multiple instance directories, non-blocking world loading (109 ms → 26 ms)."

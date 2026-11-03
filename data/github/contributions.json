@@ -1,0 +1,320 @@
+{
+ "updated": "2026-10-31",
+ "repos": [
+  {
+   "name": "PCSX2/pcsx2",
+   "url": "https://github.com/PCSX2/pcsx2",
+   "prs": [
+    {
+     "title": "ImGui: Add visual vibration intensity indicator to OSD",
+     "url": "https://github.com/PCSX2/pcsx2/pull/14230",
+     "number": "14230",
+     "date": "2026-10-30"
+    },
+    {
+     "title": "Qt: Fix Big Picture Mode mnemonic shortcut lost after state change",
+     "url": "https://github.com/PCSX2/pcsx2/pull/14245",
+     "number": "14245",
+     "date": "2026-05-03"
+    }
+   ]
+  },
+  {
+   "name": "PrismLauncher/PrismLauncher",
+   "url": "https://github.com/PrismLauncher/PrismLauncher",
+   "prs": [
+    {
+     "title": "Update tree scrollbar when toggling resource columns",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6365",
+     "number": "6365",
+     "date": "2026-10-28"
+    },
+    {
+     "title": "Select newly added icon in icon picker",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6305",
+     "number": "6305",
+     "date": "2026-10-23"
+    },
+    {
+     "title": "Fix account buttons disabled after adding a Microsoft account",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6204",
+     "number": "6204",
+     "date": "2026-10-03"
+    },
+    {
+     "title": "Extract natives into symlinked instances",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6202",
+     "number": "6202",
+     "date": "2026-10-03"
+    },
+    {
+     "title": "Fix hard link count warning for disabled tracked mods",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6194",
+     "number": "6194",
+     "date": "2026-09-30"
+    },
+    {
+     "title": "Keep en_US completeness",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6187",
+     "number": "6187",
+     "date": "2026-09-28"
+    },
+    {
+     "title": "feat: add Launch As account submenu to launch menu",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6142",
+     "number": "6142",
+     "date": "2026-09-27"
+    },
+    {
+     "title": "Make version name and build optional in Java meta",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6159",
+     "number": "6159",
+     "date": "2026-09-24"
+    },
+    {
+     "title": "Show extraction progress when importing worlds",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6149",
+     "number": "6149",
+     "date": "2026-09-24"
+    },
+    {
+     "title": "Fill PR labels from linked issues",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6139",
+     "number": "6139",
+     "date": "2026-09-24"
+    },
+    {
+     "title": "Show version column for resource and shader packs",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6125",
+     "number": "6125",
+     "date": "2026-09-20"
+    },
+    {
+     "title": "Dedupe instance dir names",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6110",
+     "number": "6110",
+     "date": "2026-09-20"
+    },
+    {
+     "title": "fix: don't show folders in mod list",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/6086",
+     "number": "6086",
+     "date": "2026-09-15"
+    },
+    {
+     "title": "fix: regenerate instance UUID on import",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/5930",
+     "number": "5930",
+     "date": "2026-08-12"
+    },
+    {
+     "title": "Add persistent global playtime counter",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/5881",
+     "number": "5881",
+     "date": "2026-08-07"
+    },
+    {
+     "title": "Allow selecting instance directory when creating a new instance",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/5870",
+     "number": "5870",
+     "date": "2026-08-06"
+    },
+    {
+     "title": "Migrate legacy instgroups.json to new location",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/5894",
+     "number": "5894",
+     "date": "2026-08-05"
+    },
+    {
+     "title": "Add support for multiple instance directories",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/5827",
+     "number": "5827",
+     "date": "2026-07-31"
+    },
+    {
+     "title": "Load world metadata asynchronously to avoid blocking UI thread",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/5845",
+     "number": "5845",
+     "date": "2026-07-28"
+    },
+    {
+     "title": "Allow editing auto generated instance name",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/5837",
+     "number": "5837",
+     "date": "2026-07-28"
+    },
+    {
+     "title": "Prevent renaming instance folder while instance is running",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/5822",
+     "number": "5822",
+     "date": "2026-07-25"
+    },
+    {
+     "title": "Fix instance shortcuts breaking when the instance is renamed",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/5816",
+     "number": "5816",
+     "date": "2026-07-22"
+    },
+    {
+     "title": "Fix crash when opening mods tab after launching an instance",
+     "url": "https://github.com/PrismLauncher/PrismLauncher/pull/5707",
+     "number": "5707",
+     "date": "2026-07-21"
+    }
+   ]
+  },
+  {
+   "name": "RPCS3/rpcs3",
+   "url": "https://github.com/RPCS3/rpcs3",
+   "prs": [
+    {
+     "title": "ci: Label AI co-authored PRs and match [TESTERS NEEDED] rsx titles",
+     "url": "https://github.com/RPCS3/rpcs3/pull/19922",
+     "number": "19922",
+     "date": "2026-10-23"
+    },
+    {
+     "title": "ci: Auto-label PRs from title and linked issues",
+     "url": "https://github.com/RPCS3/rpcs3/pull/19630",
+     "number": "19630",
+     "date": "2026-10-01"
+    },
+    {
+     "title": "overlay: Add trophy list sorting options",
+     "url": "https://github.com/RPCS3/rpcs3/pull/18965",
+     "number": "18965",
+     "date": "2026-07-31"
+    },
+    {
+     "title": "gui: Move download database actions from game list to Manage -> Database submenu",
+     "url": "https://github.com/RPCS3/rpcs3/pull/18870",
+     "number": "18870",
+     "date": "2026-06-13"
+    },
+    {
+     "title": "game_list: Fix icon display for multi-game collection ISOs",
+     "url": "https://github.com/RPCS3/rpcs3/pull/18693",
+     "number": "18693",
+     "date": "2026-05-08"
+    },
+    {
+     "title": "game_list: Fix ISO cache bypass in is_from_yml branch for multi-game ISOs",
+     "url": "https://github.com/RPCS3/rpcs3/pull/18683",
+     "number": "18683",
+     "date": "2026-05-05"
+    },
+    {
+     "title": "game_list: Add multi-game collection support for ISO format discs",
+     "url": "https://github.com/RPCS3/rpcs3/pull/18571",
+     "number": "18571",
+     "date": "2026-05-03"
+    },
+    {
+     "title": "ISO: Add metadata cache to speed up game list scanning",
+     "url": "https://github.com/RPCS3/rpcs3/pull/18546",
+     "number": "18546",
+     "date": "2026-04-12"
+    },
+    {
+     "title": "game_list_table: Allow reordering game list columns",
+     "url": "https://github.com/RPCS3/rpcs3/pull/18492",
+     "number": "18492",
+     "date": "2026-04-04"
+    }
+   ]
+  },
+  {
+   "name": "blender/blender",
+   "url": "https://projects.blender.org/blender/blender",
+   "prs": [
+    {
+     "title": "Fix #162197: Compositor: Dither stays after turning off backdrop",
+     "url": "https://projects.blender.org/blender/blender/pulls/164711",
+     "number": "164711",
+     "date": "2026-10-21"
+    },
+    {
+     "title": "Fix #164359: VSE: Clear Offset does not update attached transitions",
+     "url": "https://projects.blender.org/blender/blender/pulls/164936",
+     "number": "164936",
+     "date": "2026-10-09"
+    },
+    {
+     "title": "Fix #161596: VSE: Animated color and text strips not updating",
+     "url": "https://projects.blender.org/blender/blender/pulls/164862",
+     "number": "164862",
+     "date": "2026-10-08"
+    },
+    {
+     "title": "Fix #158472: Node Editor: Sidebar missing in some old files",
+     "url": "https://projects.blender.org/blender/blender/pulls/164790",
+     "number": "164790",
+     "date": "2026-10-07"
+    }
+   ]
+  },
+  {
+   "name": "BlueMap-Minecraft/BlueMap",
+   "url": "https://github.com/BlueMap-Minecraft/BlueMap",
+   "prs": [
+    {
+     "title": "Inset liquid faces to fix z-fighting with waterlogged blocks",
+     "url": "https://github.com/BlueMap-Minecraft/BlueMap/pull/892",
+     "number": "892",
+     "date": "2026-10-18"
+    }
+   ]
+  },
+  {
+   "name": "tryhard-26/xerxes",
+   "url": "https://github.com/tryhard-26/xerxes",
+   "prs": [
+    {
+     "title": "Skip missing directories in search results",
+     "url": "https://github.com/tryhard-26/xerxes/pull/3",
+     "number": "3",
+     "date": "2026-10-15"
+    },
+    {
+     "title": "Support indexing mount points outside $HOME",
+     "url": "https://github.com/tryhard-26/xerxes/pull/2",
+     "number": "2",
+     "date": "2026-10-13"
+    }
+   ]
+  }
+ ],
+ "shadow": [
+  {
+   "repo": "fish-shell/fish-shell",
+   "repo_url": "https://github.com/fish-shell/fish-shell",
+   "title": "git completions: prioritize recent commits for rebase --interactive",
+   "url": "https://github.com/fish-shell/fish-shell/pull/12619",
+   "number": "12619",
+   "status": "\u2713 Applied upstream",
+   "commit": "467b03d",
+   "commit_url": "https://github.com/fish-shell/fish-shell/commit/467b03d"
+  },
+  {
+   "repo": "fastfetch-cli/fastfetch",
+   "repo_url": "https://github.com/fastfetch-cli/fastfetch",
+   "title": "add global.ndigits fallback for all ndigits settings",
+   "url": "https://github.com/fastfetch-cli/fastfetch/pull/2270",
+   "number": "2270",
+   "status": "\u27f3 Inspired upstream fix",
+   "commit": "528f9f1",
+   "commit_url": "https://github.com/fastfetch-cli/fastfetch/commit/528f9f1"
+  },
+  {
+   "repo": "fish-shell/fish-shell",
+   "repo_url": "https://github.com/fish-shell/fish-shell",
+   "title": "env: fix stale $PWD after mv $PWD elsewhere",
+   "url": "https://github.com/fish-shell/fish-shell/pull/12714",
+   "number": "12714",
+   "status": "\u2713 Applied upstream",
+   "commit": "411a432",
+   "commit_url": "https://github.com/fish-shell/fish-shell/commit/411a432"
+  }
+ ],
+ "total": 41
+}

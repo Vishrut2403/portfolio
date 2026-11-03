@@ -1,0 +1,11 @@
+# raw source renders (3 GB) — web copies live in static/renders/
+Blender Renders/
+# Hugo build output and caches
+public/
+resources/
+.hugo_build.lock
+# source images; the site uses the processed copies in static/
+avatar.jpg
+logo.png
+__pycache__/
+.DS_Store

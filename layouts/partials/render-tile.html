@@ -1,0 +1,11 @@
+{{/* One gallery tile. Context: an entry from data/renders.json */}}
+<button type="button" class="tile" data-cat="{{ .category | urlize }}"
+  data-full="{{ .full | relURL }}"{{ with .video }} data-video="{{ . | relURL }}"{{ end }}
+  data-title="{{ .title }}" data-sub="{{ .category }}">
+  {{/* alt="" : the button is already named by its visible label below */}}
+  <img src="{{ .thumb | relURL }}" srcset="{{ replace .thumb ".thumb.webp" ".thumb360.webp" | relURL }} 360w, {{ .thumb | relURL }} 720w"
+    sizes="(max-width: 700px) 50vw, 300px" alt="" width="{{ .w }}" height="{{ .h }}"
+    {{- if .eager }} loading="eager"{{ if .first }} fetchpriority="high"{{ end }}{{ else }} loading="lazy"{{ end }} decoding="async">
+  {{ with .video }}<span class="tile__badge">▶ Video</span>{{ end }}
+  <span class="tile__label">{{ .title }}</span>
+</button>

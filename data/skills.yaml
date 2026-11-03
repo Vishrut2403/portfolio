@@ -1,0 +1,10 @@
+- category: "Languages"
+  items: ["C++", "C", "C#", "Rust", "Python", "TypeScript", "Java", "Kotlin", "Bash"]
+- category: "Graphics & GPU"
+  items: ["CUDA", "OpenGL", "Path tracing", "BDPT", "ReSTIR", "PBR / GGX", "SAH-BVH"]
+- category: "3D & Motion"
+  items: ["Blender", "Geometry Nodes", "Simulations", "Motion tracking", "Compositing", "Blender Python API"]
+- category: "Desktop & Systems"
+  items: ["Qt", "Electron", "RISC-V", "Emulation"]
+- category: "Web & Data"
+  items: ["ASP.NET Core", "Node.js", "React", "Express", "FastAPI", "TailwindCSS", "Django", "Flask", "PostgreSQL", "MongoDB", "SQLite", "Redis"]

@@ -1,0 +1,7 @@
+- { label: "About", href: "/#about" }
+- { label: "Experience", href: "/#experience" }
+- { label: "Projects", href: "/#projects" }
+- { label: "Open Source", href: "/#opensource" }
+- { label: "3D Renders", href: "/#renders" }
+- { label: "Gallery", href: "/renders/" }
+- { label: "Contact", href: "/#contact" }

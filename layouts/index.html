@@ -1,0 +1,240 @@
+{{ define "main" }}
+{{ $gh := hugo.Data.github }}
+{{ $renders := hugo.Data.renders | default slice }}
+{{ $oss := $gh.contributions }}
+
+<div class="intro">
+<header class="wrap hero-band">
+  <div class="bento">
+    <div class="bento__cell bento__name">
+      <p class="eyebrow">Portfolio · {{ now.Format "2006" }}</p>
+      <h1 class="hero__name">Vishrut<br><span class="hl">Sachan</span></h1>
+      <p class="hero__tagline">{{ site.Params.tagline }}</p>
+      <div class="socials">
+        {{ range $c := hugo.Data.contact.channels }}{{ with .href }}
+        <a class="btn btn--small btn--icon" href="{{ . }}"{{ if hasPrefix . "http" }} target="_blank" rel="noopener"{{ end }} aria-label="{{ $c.name }}" title="{{ $c.name }}">{{ partial "icon.html" $c.icon }}</a>
+        {{ end }}{{ end }}
+      </div>
+    </div>
+
+    {{ $loops := hugo.Data.hero }}{{ $first := index $loops 0 }}
+    <figure class="bento__cell hero__media" data-loops="{{ $loops | jsonify }}" data-base="{{ "hero/" | relURL }}">
+      {{/* no src/poster in HTML: the inline script picks a random loop before first paint so only its poster downloads; site.js then loads that video */}}
+      <video muted loop playsinline preload="none" aria-label="{{ $first.title }}: seamless looping Blender render"></video>
+      <script>{const f=document.currentScript.parentNode,l=JSON.parse(f.dataset.loops),i=Math.floor(Math.random()*l.length);f.dataset.start=i;f.querySelector("video").poster=f.dataset.base+l[i].slug+".webp";}</script>
+      <noscript><img class="hero__noscript" src="{{ printf "hero/%s.webp" $first.slug | relURL }}" alt=""></noscript>
+      <button type="button" class="btn btn--small btn--icon hero__pause" aria-label="Pause animations" title="Pause animations">❚❚</button>
+      <div class="hero__nav">
+        <button type="button" class="btn btn--small btn--icon" data-loop-step="-1" aria-label="Previous animation">←</button>
+        <span class="hero__count" aria-live="polite">1 / {{ len $loops }} · {{ $first.title }}</span>
+        <button type="button" class="btn btn--small btn--icon" data-loop-step="1" aria-label="Next animation">→</button>
+      </div>
+      <figcaption class="sticker">Rendered in Blender</figcaption>
+    </figure>
+
+    {{ with $oss }}<div class="bento__cell stat stat--prs"><b>{{ .total }}</b><span>merged PRs</span></div>{{ end }}
+    {{ with $renders }}<div class="bento__cell stat stat--renders"><b>{{ len . }}</b><span>Blender renders</span></div>{{ end }}
+    {{ with $gh.calendar }}<div class="bento__cell stat stat--contrib"><b>{{ .total }}</b><span>contributions this year</span></div>{{ end }}
+
+    <a class="bento__cell cta cta--renders" href="#renders">See renders <span aria-hidden="true">↓</span></a>
+    <a class="bento__cell cta cta--oss" href="#opensource">Open source <span aria-hidden="true">↓</span></a>
+    <a class="bento__cell cta cta--cv" href="{{ site.Params.resume | relURL }}" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+{{ $tech := slice }}{{ range hugo.Data.skills }}{{ $tech = $tech | append .items }}{{ end }}
+<div class="marquee" role="marquee" aria-label="Skills: {{ delimit $tech ", " }}">
+  <div class="marquee__track" aria-hidden="true">
+    {{ range seq 2 }}<span class="marquee__group">{{ range $tech }}<span>{{ . }}</span><span class="marquee__star">✦</span>{{ end }}</span>{{ end }}
+  </div>
+</div>
+</div>
+
+<section id="about" class="band">
+<div class="wrap reveal split">
+  <div class="split__main">
+    <h2 class="section__title">About</h2>
+    <div class="card prose">
+      <div class="clamp">
+      <p>Hey, I'm <strong>Vishrut</strong>, a Computer and Communication Engineering student at <strong>MIT Manipal</strong> (class of 2027).</p>
+      <p>I work on the low-level side of graphics and systems: path tracing (BDPT, photon mapping, ReSTIR), PBR shading and GPU optimisation in C++ and CUDA, plus a capability-based RISC-V microkernel in Rust. Most of my free time goes into open source: the <strong>RPCS3</strong> and <strong>PCSX2</strong> emulators, the <strong>PrismLauncher</strong> Minecraft launcher, and lately <strong>Blender</strong> itself.</p>
+      <p>I'm also a <strong>3D artist</strong>. As Blender Head at <a href="https://github.com/Project-V-ARISE" target="_blank" rel="noopener">VARISE</a> I lead the 3D and VR pipeline; our team placed Top 8 of ~2,000 at the XR Creator Hackathon. The renders below cover simulations, motion graphics, environments and VR sets.</p>
+      <p>This summer I interned at <strong>Engineers India Limited</strong>, building a RAG assistant for their employee dashboard, and my team finished in the top 5% of 10,000+ teams in the <strong>Amazon ML Challenge 2026</strong>.</p>
+      </div>
+      <button type="button" class="clamp-toggle" aria-expanded="false" hidden>More ↓</button>
+    </div>
+  </div>
+  <div class="split__side" id="skills">
+    <h2 class="section__title">Skills</h2>
+    <div class="card">
+      <div class="skills clamp">
+        {{ range hugo.Data.skills }}
+        <div class="skills__group">
+          <h3 class="skills__cat">{{ .category }}</h3>
+          <ul class="pills">{{ range .items }}<li class="pill">{{ . }}</li>{{ end }}</ul>
+        </div>
+        {{ end }}
+      </div>
+      <button type="button" class="clamp-toggle" aria-expanded="false" hidden>More ↓</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="experience" class="band band--yellow">
+<div class="wrap reveal">
+  <h2 class="section__title">Experience</h2>
+  <ol class="timeline">
+    {{ range $e := hugo.Data.experience }}{{ partial "tl-item" (dict "e" $e) }}{{ end }}
+  </ol>
+  <h2 class="section__title section__title--sub">Education</h2>
+  <ol class="timeline">
+    {{ range $e := hugo.Data.education }}{{ partial "tl-item" (dict "e" $e) }}{{ end }}
+  </ol>
+</div>
+</section>
+
+<section id="projects" class="band">
+<div class="wrap reveal">
+  <h2 class="section__title">Projects</h2>
+  <p class="swipe-hint" aria-hidden="true">Swipe →</p>
+  <div class="cards cards--projects swipe">
+    {{ range $p := hugo.Data.projects }}
+    {{ $r := index ($gh.repos | default dict) .repo }}
+    <article class="card card--link project{{ if .featured }} project--featured{{ end }}">
+      {{ with .highlights }}
+      <div class="project__nums">
+        {{ range . }}<div class="project__num"><b>{{ .value }}</b><span>{{ .label }}</span></div>{{ end }}
+      </div>
+      {{ end }}
+      <div class="project__body">
+        <div class="project__head">
+          <h3>{{ if .featured }}<span class="project__flag">Featured</span>{{ end }}<a class="stretched" href="{{ with $r }}{{ .url }}{{ else }}{{ site.Params.github }}/{{ $p.repo }}{{ end }}" target="_blank" rel="noopener">{{ .title }}</a></h3>
+          {{ with $r }}{{ if .stars }}<span class="mono-tag">★ {{ .stars }}</span>{{ end }}{{ end }}
+        </div>
+        <p class="project__desc clamp">{{ .description }}</p>
+        <button type="button" class="clamp-toggle" aria-expanded="false" hidden>More ↓</button>
+        <ul class="pills pills--small">{{ range .tags }}<li class="pill">{{ . }}</li>{{ end }}</ul>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</div>
+</section>
+
+<section id="opensource" class="band band--blue">
+<div class="wrap reveal">
+  <h2 class="section__title">Open Source</h2>
+  {{ with $oss }}
+  <div class="bignums">
+    <div class="bignum bignum--pink"><b>{{ .total }}</b><span>merged PRs</span></div>
+    <div class="bignum bignum--green"><b>{{ len .repos }}</b><span>projects</span></div>
+    <div class="bignum bignum--yellow"><b>{{ len .shadow }}</b><span>landed upstream</span></div>
+    {{ with $gh.calendar }}<div class="bignum bignum--plain"><b>{{ .total }}</b><span>contributions this year</span></div>{{ end }}
+  </div>
+  <p class="lede lede--small">Synced daily from <a href="https://github.com/{{ site.Params.handle }}/{{ site.Params.handle }}/blob/main/docs/contributions.md" target="_blank" rel="noopener">contributions.md</a>{{ with .updated }} · last updated {{ . }}{{ end }}.</p>
+  {{ end }}
+
+  {{ with $cal := $gh.calendar }}
+  <div class="card graph">
+    <div class="graph__head">
+      <span><b>{{ .total }}</b> contributions in the last year</span>
+      <a class="mono-tag" href="{{ site.Params.github }}" target="_blank" rel="noopener">@{{ site.Params.handle }} ↗</a>
+    </div>
+    <div class="graph__scroll clamp">
+      <svg class="graph__svg" viewBox="0 0 {{ add (mul (len .weeks) 14) 30 }} 116" role="img" aria-label="GitHub contribution calendar">
+        {{ $prev := "" }}
+        {{ range $i, $w := .weeks }}
+          {{ $m := (time (index $w 0).date).Format "Jan" }}
+          {{ if and (ne $m $prev) (lt $i (sub (len $cal.weeks) 2)) }}<text class="graph__label" x="{{ add 30 (mul $i 14) }}" y="10">{{ $m }}</text>{{ end }}
+          {{ $prev = $m }}
+          {{ range $w }}<rect class="lv{{ .level }}" x="{{ add 30 (mul $i 14) }}" y="{{ add 18 (mul .weekday 14) }}" width="11" height="11"><title>{{ .count }} on {{ .date }}</title></rect>{{ end }}
+        {{ end }}
+        <text class="graph__label" x="0" y="45">Mon</text><text class="graph__label" x="0" y="73">Wed</text><text class="graph__label" x="0" y="101">Fri</text>
+      </svg>
+    </div>
+    <button type="button" class="clamp-toggle" data-more="Show graph ↓" data-less="Hide graph ↑" aria-expanded="false" hidden>Show graph ↓</button>
+  </div>
+  {{ end }}
+
+  {{ with $oss }}
+  <p class="swipe-hint" aria-hidden="true">Swipe →</p>
+  <div class="cards cards--oss swipe">
+    {{ range .repos }}
+    <article class="card oss">
+      <div class="project__head">
+        {{ $p := split .name "/" }}
+        <h3><a href="{{ .url }}" target="_blank" rel="noopener"><span class="oss__owner">{{ index $p 0 }} /</span>{{ index $p 1 }}</a></h3>
+        <span class="mono-tag mono-tag--accent">{{ len .prs }} merged</span>
+      </div>
+      <ul class="pr-list fold" data-fold="4" data-fold-phone="2">
+        {{ range .prs }}{{ partial "pr-row" . }}{{ end }}
+      </ul>
+      <button type="button" class="fold-toggle" aria-expanded="false" hidden></button>
+    </article>
+    {{ end }}
+    {{ with .shadow }}
+    <article class="card oss oss--shadow">
+      <div class="project__head"><h3>Shadow contributions</h3><span class="mono-tag">landed upstream</span></div>
+      <ul class="pr-list fold" data-fold="99" data-fold-phone="1">
+        {{ range $s := . }}
+        <li><a class="pr-list__num" href="{{ .url }}" target="_blank" rel="noopener">#{{ .number }}</a>
+          <span><b>{{ .repo }}</b>: {{ .title }} <span class="muted">({{ .status }}{{ with .commit }}, <a href="{{ $s.commit_url }}" target="_blank" rel="noopener">{{ . }}</a>{{ end }})</span></span></li>
+        {{ end }}
+      </ul>
+      <button type="button" class="fold-toggle" aria-expanded="false" hidden></button>
+    </article>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+</section>
+
+<section id="renders" class="band band--pink">
+<div class="wrap reveal">
+  <h2 class="section__title">3D Renders</h2>
+  <p class="lede">Simulations, motion graphics, environments and VR sets, all made in Blender. Tap any tile to view it full-size; videos play in the viewer.</p>
+  <div class="gallery gallery--featured fold" data-fold="99" data-fold-phone="7">
+    {{ range $id := hugo.Data.featured }}{{ range where $renders "id" $id }}{{ partial "render-tile.html" . }}{{ end }}{{ end }}
+  </div>
+  <button type="button" class="fold-toggle fold-toggle--block" aria-expanded="false" hidden></button>
+  {{ with $renders }}<a class="btn btn--accent btn--block" href="{{ "renders/" | relURL }}">Browse all {{ len . }} renders →</a>{{ end }}
+</div>
+</section>
+
+<section id="contact" class="band band--ink">
+<div class="wrap reveal">
+  <h2 class="shout">Let's <span class="hl hl--yellow">talk</span></h2>
+  <p class="lede">{{ hugo.Data.contact.intro }}</p>
+  <div class="ctiles">
+    {{ range $c := hugo.Data.contact.channels }}
+    {{ with .href }}
+    <a class="ctile" href="{{ . }}"{{ if hasPrefix . "http" }} target="_blank" rel="noopener"{{ end }}>
+    {{ else }}
+    <button type="button" class="ctile copy-btn" data-copy="{{ $c.copyValue }}">
+    {{ end }}
+      <span class="ctile__icon">{{ partial "icon.html" $c.icon }}</span>
+      <span class="ctile__name">{{ $c.name }}{{ if not $c.href }} · <span class="copy-label">tap to copy</span>{{ else }} <span aria-hidden="true">↗</span>{{ end }}</span>
+      <span class="ctile__value">{{ $c.value }}</span>
+    {{ if .href }}</a>{{ else }}</button>{{ end }}
+    {{ end }}
+  </div>
+</div>
+</section>
+{{ end }}
+
+{{ define "partials/pr-row" }}
+<li><a class="pr-list__num" href="{{ .url }}" target="_blank" rel="noopener">#{{ .number }}</a><span>{{ .title }}</span></li>
+{{ end }}
+
+{{ define "partials/tl-item" }}{{ $e := .e }}{{ $d := split $e.date " – " }}
+<li class="tl">
+  <div class="tl__date"><b>{{ index $d 0 }}</b>{{ if gt (len $d) 1 }}<span>→ {{ index $d 1 }}</span>{{ end }}</div>
+  <div class="card tl__card">
+    <h3>{{ $e.title }}</h3>
+    <p class="muted">{{ with $e.orgHref }}<a href="{{ . }}" target="_blank" rel="noopener">{{ $e.org }}</a>{{ else }}{{ with $e.org }}{{ . }}{{ else }}{{ $e.subtitle }}{{ end }}{{ end }}</p>
+    {{ with $e.details }}<ul class="bullets clamp">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+    <button type="button" class="clamp-toggle" aria-expanded="false" hidden>More ↓</button>{{ end }}
+  </div>
+</li>
+{{ end }}

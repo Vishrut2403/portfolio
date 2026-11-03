@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ site.Params.name }} · Portfolio{{ else }}{{ .Title }} · {{ site.Params.name }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <meta property="og:title" content="{{ site.Params.name }}">
+  <meta property="og:image" content="{{ printf "hero/%s.webp" (index hugo.Data.hero 0).slug | absURL }}">
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{/* self-hosted fonts (no render-blocking third-party stylesheet); preload all three (64 KB) */}}
+  <link rel="preload" href="{{ "fonts/space-grotesk-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ "fonts/space-mono-700.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ "fonts/space-mono-400.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{ partial "nav.html" . }}
+  <main id="main">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Render viewer">
+    <form method="dialog"><button class="lightbox__btn lightbox__close" aria-label="Close">{{ partial "icon.html" "close" }}</button></form>
+    <button class="lightbox__btn lightbox__prev" data-step="-1" aria-label="Previous">←</button>
+    <figure class="lightbox__figure">
+      <div class="lightbox__media"></div>
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__next" data-step="1" aria-label="Next">→</button>
+  </dialog>
+
+  {{ $js := resources.Get "js/site.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+{
+ "AmazonML26": {
+  "url": "https://github.com/Vishrut2403/AmazonML26",
+  "description": "Amazon ML Challenge 2026: business entity resolution across three noisy sources (public LB 0.986971)",
+  "language": "Python",
+  "stars": 0,
+  "homepage": "",
+  "fork": false,
+  "topics": [
+   "amazon-ml-challenge",
+   "cross-encoder",
+   "entity-resolution",
+   "hackathon",
+   "lightgbm",
+   "machine-learning",
+   "multilingual",
+   "nlp",
+   "record-linkage",
+   "transformers"
+  ]
+ },
+ "aptos-dr-grading": {
+  "url": "https://github.com/Vishrut2403/aptos-dr-grading",
+  "description": "",
+  "language": "Python",
+  "stars": 1,
+  "homepage": "",
+  "fork": false,
+  "topics": []
+ },
+ "blender-agent": {
+  "url": "https://github.com/Vishrut2403/blender-agent",
+  "description": "",
+  "language": "Python",
+  "stars": 0,
+  "homepage": "",
+  "fork": false,
+  "topics": []
+ },
+ "blendiff": {
+  "url": "https://github.com/Vishrut2403/blendiff",
+  "description": "",
+  "language": "Python",
+  "stars": 3,
+  "homepage": "",
+  "fork": false,
+  "topics": []
+ },
+ "BlueMap": {
+  "url": "https://github.com/Vishrut2403/BlueMap",
+  "description": "A Minecraft mapping tool that creates 3D models of your Minecraft worlds and displays them in a web viewer.",
+  "language": "",
+  "stars": 0,
+  "homepage": "https://bluecolo.red/bluemap",
+  "fork": true,
+  "topics": []
+ },
+ "DeskLLM": {
+  "url": "https://github.com/Vishrut2403/DeskLLM",
+  "description": "A lightweight Electron-based desktop application for interacting with locally hosted LLMs using Ollama.",
+  "language": "HTML",
+  "stars": 0,
+  "homepage": "",
+  "fork": false,
+  "topics": []
+ },
+ "fastfetch": {
+  "url": "https://github.com/Vishrut2403/fastfetch",
+  "description": "A maintained, feature-rich and performance oriented, neofetch like system information tool.",
+  "language": "",
+  "stars": 0,
+  "homepage": "",
+  "fork": true,
+  "topics": []
+ },
+ "fish-shell": {
+  "url": "https://github.com/Vishrut2403/fish-shell",
+  "description": "The user-friendly command line shell.",
+  "language": "Rust",
+  "stars": 0,
+  "homepage": "https://fishshell.com",
+  "fork": true,
+  "topics": []
+ },
+ "GameVault": {
+  "url": "https://github.com/Vishrut2403/GameVault",
+  "description": "Full-stack gaming library tracker \u2014 unifies Steam, RetroArch, RetroAchievements, Minecraft and more with analytics, HowLongToBeat integration, and smart budget recommendations.",
+  "language": "TypeScript",
+  "stars": 3,
+  "homepage": "",
+  "fork": false,
+  "topics": [
+   "analytics",
+   "game-tracker",
+   "gaming",
+   "hltb",
+   "nodejs",
+   "postgresql",
+   "prisma",
+   "react",
+   "retroachievements",
+   "retroarch",
+   "steam",
+   "typescript"
+  ]
+ },
+ "gba-rs": {
+  "url": "https://github.com/Vishrut2403/gba-rs",
+  "description": "",
+  "language": "Rust",
+  "stars": 0,
+  "homepage": "",
+  "fork": false,
+  "topics": []
+ },
+ "mc-client": {
+  "url": "https://github.com/Vishrut2403/mc-client",
+  "description": "",
+  "language": "Shell",
+  "stars": 0,
+  "homepage": "",
+  "fork": false,
+  "topics": []
+ },
+ "pcsx2": {
+  "url": "https://github.com/Vishrut2403/pcsx2",
+  "description": "PCSX2 - The Playstation 2 Emulator",
+  "language": "C++",
+  "stars": 0,
+  "homepage": "https://pcsx2.net",
+  "fork": true,
+  "topics": []
+ },
+ "PrismLauncher": {
+  "url": "https://github.com/Vishrut2403/PrismLauncher",
+  "description": "A custom launcher for Minecraft that allows you to easily manage multiple installations of Minecraft at once (Fork of MultiMC)",
+  "language": "C++",
+  "stars": 0,
+  "homepage": "https://prismlauncher.org",
+  "fork": true,
+  "topics": []
+ },
+ "Ray-Tracing-Engine": {
+  "url": "https://github.com/Vishrut2403/Ray-Tracing-Engine",
+  "description": "",
+  "language": "C++",
+  "stars": 5,
+  "homepage": "",
+  "fork": false,
+  "topics": []
+ },
+ "RenderNet": {
+  "url": "https://github.com/Vishrut2403/RenderNet",
+  "description": "A full-stack web application for distributed Blender rendering",
+  "language": "JavaScript",
+  "stars": 1,
+  "homepage": "",
+  "fork": false,
+  "topics": []
+ },
+ "rpcs3": {
+  "url": "https://github.com/Vishrut2403/rpcs3",
+  "description": "PlayStation 3 emulator and debugger",
+  "language": "C++",
+  "stars": 0,
+  "homepage": "https://rpcs3.net/",
+  "fork": true,
+  "topics": []
+ },
+ "tessera": {
+  "url": "https://github.com/Vishrut2403/tessera",
+  "description": "",
+  "language": "Rust",
+  "stars": 1,
+  "homepage": "",
+  "fork": false,
+  "topics": []
+ },
+ "Vishrut2403": {
+  "url": "https://github.com/Vishrut2403/Vishrut2403",
+  "description": "",
+  "language": "",
+  "stars": 0,
+  "homepage": "",
+  "fork": false,
+  "topics": []
+ },
+ "WasmEdge": {
+  "url": "https://github.com/Vishrut2403/WasmEdge",
+  "description": "WasmEdge is a lightweight, high-performance, and extensible WebAssembly runtime for cloud native, edge, and decentralized applications. It powers serverless apps, embedded functions, microservices, smart contracts, and IoT devices.",
+  "language": "",
+  "stars": 0,
+  "homepage": "https://WasmEdge.org",
+  "fork": true,
+  "topics": []
+ },
+ "xerxes": {
+  "url": "https://github.com/Vishrut2403/xerxes",
+  "description": "Xerxes is a high-performance filesystem navigation engine for macOS and Linux. It provides instant directory jumping using fuzzy matching and a frecency-based ranking algorithm.",
+  "language": "",
+  "stars": 0,
+  "homepage": "",
+  "fork": true,
+  "topics": []
+ }
+}

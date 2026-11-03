@@ -1,0 +1,18 @@
+# Hero carousel (top-right). Each video must loop seamlessly; a random one is picked on every visit.
+# Encode new ones as 720x720 squares, full length (trimming breaks the loop):
+#   ffmpeg -i "Blender Renders/.../clip.mp4" -an -vf "crop=min(iw\,ih):min(iw\,ih),scale=720:720" \
+#     -c:v libx264 -crf 27 -preset slow -pix_fmt yuv420p -movflags +faststart static/hero/<slug>.mp4
+#   ffmpeg -i static/hero/<slug>.mp4 -frames:v 1 -c:v libwebp static/hero/<slug>.webp
+- { slug: "marble-steps",   title: "Marble Steps" }
+- { slug: "spiral-orbits",  title: "Spiral Orbits" }
+- { slug: "copper-pegs",    title: "Copper Pegs" }
+- { slug: "inflating-tube", title: "Inflating Tube" }
+- { slug: "pendulum",       title: "Pendulum" }
+- { slug: "abstract-glass",   title: "Abstract Glass" }
+- { slug: "shattering-rhino", title: "Shattering Rhino" }
+- { slug: "vaporwave-sunset", title: "Vaporwave Sunset" }
+- { slug: "neon-plexus",      title: "Neon Plexus" }
+- { slug: "rocket",           title: "Rocket" }
+- { slug: "portal-forest",    title: "Portal Forest" }
+- { slug: "neon-swirls",      title: "Neon Swirls" }
+- { slug: "card-shuffle",     title: "Card Shuffle" }

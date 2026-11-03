@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ $renders := hugo.Data.renders | default slice }}
+<div class="wrap page">
+<header class="hero hero--compact">
+  <div class="hero__text">
+    <p class="eyebrow"><a href="{{ site.Home.RelPermalink }}">← Home</a></p>
+    <h1 class="hero__name">3D <span class="hl">Renders</span></h1>
+    <p class="hero__tagline">{{ len $renders }} pieces made in Blender. Filter by category, click to open, use ← → to browse.</p>
+  </div>
+</header>
+
+<div class="filters" role="group" aria-label="Filter by category">
+  <button type="button" class="pill pill--btn is-active" data-filter="all">All <small>{{ len $renders }}</small></button>
+  {{ $cats := slice }}{{ range $renders }}{{ $cats = $cats | append .category }}{{ end }}
+  {{ range ($cats | uniq | sort) }}
+  <button type="button" class="pill pill--btn" data-filter="{{ . | urlize }}">{{ . }} <small>{{ len (where $renders "category" .) }}</small></button>
+  {{ end }}
+</div>
+
+<div class="gallery" id="gallery">
+  {{/* featured picks first, then everything else in folder order */}}
+  {{ $f := hugo.Data.featured | default slice }}
+  {{/* featured picks first; the first 8 (above the fold) load eagerly */}}
+  {{ range $i, $id := $f }}{{ range where $renders "id" $id }}{{ partial "render-tile.html" (merge . (dict "eager" (lt $i 8) "first" (eq $i 0))) }}{{ end }}{{ end }}
+  {{ range $renders }}{{ if not (in $f .id) }}{{ partial "render-tile.html" . }}{{ end }}{{ end }}
+</div>
+</div>
+{{ end }}
