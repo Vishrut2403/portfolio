@@ -1,6 +1,6 @@
 # Vishrut Sachan · Portfolio
 
-Live: https://vishrut2403.github.io/portfolio/
+Live: https://notvishrut.me/
 
 ```
 bash build.sh serve   # preview at http://localhost:1313

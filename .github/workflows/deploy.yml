@@ -26,7 +26,7 @@ jobs:
       - name: Build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: bash build.sh "${{ steps.pages.outputs.base_url }}/"
+        run: bash build.sh   # baseURL comes from hugo.toml
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./public

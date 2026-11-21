@@ -1,4 +1,4 @@
-baseURL = "https://vishrut2403.github.io/portfolio/"   # GitHub Pages project site (repo "portfolio")
+baseURL = "https://notvishrut.me/"   # custom domain (GitHub Pages, repo "portfolio")
 locale = "en-US"
 title = "Vishrut Sachan"
 enableRobotsTXT = true

@@ -20,7 +20,7 @@ if ! command -v hugo >/dev/null; then
 fi
 
 if [ "${1:-}" = "serve" ]; then
-  exec hugo server --disableFastRender --baseURL http://localhost:1313/   # preview at the root, not /portfolio/
+  exec hugo server --disableFastRender --baseURL http://localhost:1313/   # preview at localhost
 fi
 
 python3 scripts/fetch_github.py || echo "warn: GitHub refresh failed, using committed data"
